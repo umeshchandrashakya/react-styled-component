@@ -15,12 +15,13 @@ import {
   BACKDROP_SIZE
 } from "../config";
 
+import { useHomeFetch } from "./hooks/useHomeFetch";
+
 import { useState, useEffect } from "react";
 
 const Home = () => {
-  const [state, setState] = useState({ movies: [] });
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  console.log("inside home");
+  const [{ state, loading, error }, fetchMovie] = useHomeFetch();
   return (
     <>
       <HeroImage />
